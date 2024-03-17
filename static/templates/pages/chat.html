@@ -1,0 +1,15 @@
+{{ define "app" }}
+<div id="app" class="flex flex-wrap mx-auto h-5/6 w-full justify-center items-center">
+  <div class="mt-4 h-full md:w-3/6 w-5/6" hx-ext="ws" ws-connect="/ws/chat/{{.Id}}">
+
+    <div class="p-3 bg-white shadow rounded-t-lg font-semibold text-slate-700">{{ .Room.Name }}</div>
+    <div class="shadow h-5/6 p-4 bg-sky-300/75 flex flex-col overflow-scroll justify-start scroll-smooth" id="messages">
+    </div>
+
+    <form id="form" ws-send autocomplete="off" hx-on:submit="this.reset();">
+      <input name="message" required type="text" placeholder="Write a message"
+        class="p-3 w-full rounded-b-lg outline-none shadow font-semibold text-slate-700 caret-sky-700">
+    </form>
+  </div>
+</div>
+{{end}}

@@ -1,0 +1,9 @@
+{{ define "app" }}
+<div id="app" class="flex flex-wrap mx-auto h-5/6 justify-center items-center">
+  <form hx-put="/api/chat">
+    <input class="p-2 rounded-lg outline-none shadow font-semibold text-slate-700" type="text"
+      placeholder="Name of the chat" name="name" maxlength="40" required owned>
+    {{ template "button" "Create a chat" }}
+  </form>
+</div>
+{{ end }}

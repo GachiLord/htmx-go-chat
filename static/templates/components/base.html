@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/resources/output.css" rel="stylesheet">
+  <script src="/resources/htmx.min.js"></script>
+  <script src="/resources/ws.js.js"></script>
+</head>
+
+<body>
+  <div class="h-screen bg-gradient-to-b from-sky-200 to-white ...">
+    <header>
+      <!-- Navigation bar -->
+      <nav class="flex flex-row justify-center py-4 border-b text-slate-600 font-semibold opacity-85 bg-white">
+        <div hx-boost="true" hx-target="#app">
+          <a href="/" class="px-2 hover:text-sky-500">Home</a>
+        </div>
+        <div hx-boost="true" hx-target="#app">
+          <a href="/new" class="px-2 hover:text-sky-500">Create a chat</a>
+        </div>
+      </nav>
+    </header>
+    <!-- App's div -->
+    {{ template "app" . }}
+  </div>
+</body>
+
+</html>
